@@ -21,10 +21,28 @@ app.get('/:id', function (req, res) {
   res.end(JSON.stringify(response))
 })
 
+app.get('/all', function (req, res) {
+  console.log('GET ALL request received')
+  res.writeHead(200, {'Content-Type': 'application/json'})
+  var response = { "response" : "THIS SHOULD BE A LIST ." }
+  console.log(response)
+  res.end(JSON.stringify(response))
+})
+
+
+
 app.post('/', function (req, res) {
   console.log('POST request received')
   res.writeHead(200, {'Content-Type': 'application/json'})
   var response = { "response" : "This is POST method." }
+  console.log(response)
+  res.end(JSON.stringify(response))
+})
+
+app.post('/modify', function (req, res) {
+  console.log('POST request received')
+  res.writeHead(200, {'Content-Type': 'application/json'})
+  var response = { "response" : "This is definetly not a post method, and doesnt make anything" }
   console.log(response)
   res.end(JSON.stringify(response))
 })
